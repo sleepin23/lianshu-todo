@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "炼书 Todo",
+  "version": "1.0.0",
+  "description": "A beautiful TodoList Chrome extension built with Vue 3",
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": "TODO_INFO.png"
+  },
+  "permissions": ["storage"],
+  "icons": {
+    "16": "TODO_INFO.png",
+    "48": "TODO_INFO.png",
+    "128": "TODO_INFO.png"
+  }
+}
