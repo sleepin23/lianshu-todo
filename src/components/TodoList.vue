@@ -46,8 +46,8 @@
           @change="onDragChange"
           :animation="200"
       >
-        <template #item="{ element: todo }">
-          <div class="todo-item">
+        <template #item="{ element: todo, index }">
+          <div class="todo-item" :style="{ backgroundColor: bgColors[index % bgColors.length] }">
             <button
                 @click="toggleTodo(todo)"
                 :class="['status-btn', { completed: todo.completed }]"
@@ -254,30 +254,28 @@ const onDragChange = (event) => {
   }
   saveTodos()
 }
+
+const bgColors = [
+  '#e6f3ff', // 淡蓝色
+  '#e6fffa', // 淡青色
+  '#fff9e6', // 淡黄色
+  '#ffe6f0', // 淡粉色
+  '#f3e6ff', // 淡紫色
+  '#e6ffe6', // 淡绿色
+  '#fff0e6', // 淡橙色
+  '#e6e6ff', // 淡靛蓝色
+  '#ffffe6', // 淡柠檬色
+  '#f0f0f0'  // 淡灰色
+]
 </script>
 
 <style scoped>
-/* 样式保持不变 */
 .todo-container {
   width: 400px;
   height: 500px;
   background: white;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
-  position: relative;
-}
-
-.todo-container::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  border-radius: 16px;
-  pointer-events: none;
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1);
 }
 
 .todo-header {
@@ -403,17 +401,15 @@ h1 {
   align-items: center;
   gap: 12px;
   padding: 12px;
-  background: #f9fafb;
   border-radius: 6px;
   transition: all 0.3s ease;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-  cursor: pointer; /* 从 move 改为 pointer */
+  cursor: pointer;
 }
 
 .todo-item:hover {
   transform: translateY(-3px);
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
-  background: #f3f4f6;
 }
 
 .status-btn {
@@ -483,7 +479,7 @@ h1 {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 200px;
+  max-width: 300px;
   position: relative;
 }
 
@@ -601,3 +597,4 @@ h1 {
   }
 }
 </style>
+
