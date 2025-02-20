@@ -7,7 +7,6 @@
     "default_popup": "index.html",
     "default_icon": "TODO_INFO.png"
   },
-  "permissions": ["storage"],
   "icons": {
     "16": "TODO_INFO.png",
     "48": "TODO_INFO.png",
