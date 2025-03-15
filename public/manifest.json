@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "炼书 Todo",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "一个样式简约清新好看的todo插件",
   "action": {
     "default_popup": "index.html",
